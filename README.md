@@ -72,6 +72,8 @@ Run binary:
 
 ./showpsf <font_name.psf> #pass [arg] as PSF font
 ```
+Add "-DINPUT_STR" to show chars only passed by kbd inputs, otherwise display all glyphs (default).
+
 # Using:
 Include psf.h in your application. It is possible to link dynamically, but 
 this is not recommended for releases, linking statically or including 

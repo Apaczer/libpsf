@@ -144,7 +144,7 @@ int main(int argc, char **argv)
 	  quit = 1;
 	  break;
 	default:
-#if 0
+#ifdef INPUT_STR
 	  if (event.key.keysym.unicode)                  
 	  {
 	    //Add the user's character to the string
@@ -158,7 +158,7 @@ int main(int argc, char **argv)
 	}
       }
     }
-#if 0
+#ifdef INPUT_STR
     //Clear the screen (the sloppy way)
     SDL_FillRect(screen,NULL,SDL_MapRGB(screen->format,0xFF,0xFF,0xFF));
 
