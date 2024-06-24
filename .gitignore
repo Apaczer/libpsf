@@ -29,6 +29,9 @@
 *.hex
 showpsf
 
+# Distribution
+dist/
+
 # Debug files
 *.dSYM/
 *.su

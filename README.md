@@ -40,8 +40,8 @@ make install
 - cross-compile
 ```
 export CC=${CROSS_COMPILE}gcc
+export SYSROOT=<path_to_sdk_sysroot>
 make
-cp libpsf.so ${SYSROOT}/usr/lib #on host to build & target to run
 ```
 
 If you wish to install in a different location, use the PREFIX environment
@@ -58,11 +58,17 @@ provide a usable built-in memcpy implementation.
 ### Build an example to display psf font with SDL1.2 backend (showpsf.c):
 - native
 ```
-gcc showpsf.c -o showpsf -lSDL -lpsf -lz
+make install
+make example
 ```
 - cross-compile
 ```
-${CROSS_COMPILE}gcc showpsf.c -o showpsf -I{SYSROOT/usr/lib -lSDL -lpsf -lz
+export CC=${CROSS_COMPILE}gcc
+export SYSROOT=<path_to_sdk_sysroot>
+make install
+make example-dist
+
+# then copy "dist/" to your target machine and run "showpsf.sh" script
 ```
 Run binary:
 ```
